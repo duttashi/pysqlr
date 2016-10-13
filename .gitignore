@@ -1,2 +1,3 @@
 # Folder or files to ignore
 data
+.Rproj.user
