@@ -16,3 +16,11 @@ covrg=A
 
 # http://stackoverflow.com/questions/16112162/graph-flow-chart-of-transition-from-states
 
+col   <- strn
+col[] <- "red"
+col[2, 1] <- col[4, 1] <- "blue"
+plotmat(strn, box.prop = 2,
+        arr.lwd=A,
+        lwd = 1, box.lwd = 2, box.cex = 1, cex.txt = 0.8, 
+        arr.lcol = col, arr.col = col, box.type = "rect",
+        lend=3)
