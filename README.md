@@ -1,2 +1,2 @@
-# r4ds
-Repository for learning and mastering R
+# project sql
+Repository for learning and experimenting with Structured Query Processing (SQL) Language
