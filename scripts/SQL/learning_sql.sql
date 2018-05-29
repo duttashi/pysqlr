@@ -192,6 +192,8 @@ FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
 
 SELECT Order_ID, aisle,quantity FROM orders FULL OUTER JOIN groceries
 ON orders.id=groceries.id;
+SELECT Order_ID, name, aisle,quantity FROM orders FULL OUTER JOIN groceries
+ON orders.id=groceries.id;
 
 /*
 Next time, I will continue the SQL operators like Union, Group By, Having, Exists, Any, All, Select Into, Insert Into Select and Null Functions
