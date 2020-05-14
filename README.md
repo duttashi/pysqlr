@@ -7,7 +7,7 @@
 
 # pysqlr
 
-This repository contains scripts for database interfacing. Primarily, the database will be `MySql 8.0.19` and the interfacing languages are `python 3.7`and `R 3.6.1`.
+This repository contains scripts for database interfacing. Primarily, the database will be `MySql 8.0.19` and the interfacing languages are `python 3.7` and `R 3.6.1`.
 
 ### General information
 
