@@ -5,17 +5,18 @@ Revised on May 14 9:17 AM 2020
 
 @author: Ashish
 """
-# Using mysqlclient for windows
-# See documentation https://mysqlclient.readthedocs.io/
-# Install it by pip install mysqlclient
+# Using mysql.connector for windows
+# See documentation https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html
+# SO post: https://stackoverflow.com/questions/4960048/how-can-i-connect-to-mysql-in-python-3-on-windows
+# Install it by downloading the software from https://dev.mysql.com/downloads/connector/python/
 # check installation by opening a command prompt
 # window and type command pip -list
-# at the time of writing this script, the mysqlclient version is 1.4.6
+# at the time of writing this script, the mysql.connector version is 8.0.20
 
-import pymysql
+import mysql.connector as conx
 
-db = pymysql.connect(host="localhost", user="root",
-                     password="ashoo", db="db_practise")
+db = conx.connect(host="localhost", user="root", 
+                  password="ashoo", db="db_practise")
 print(db)
 cursor = db.cursor()
 cursor.execute("SELECT * from deathrow")
