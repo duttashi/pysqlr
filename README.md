@@ -15,6 +15,18 @@ This repository contains scripts for database interfacing. Primarily, the databa
 
 The world wide web is full of data that are of great interest to scientists and businesses alike. Firms, public institutions, and private users provide every imaginable type of information, and new channels of communication generate vast amounts of data on human behavior. But how to efficiently use the data present in either offline or online database's, is an interesting question. I will answer such questions by creating effective solutions in this repository.
 
+#### Result reproducibility
+
+Please read the [requirements.txt](https://github.com/duttashi/pysqlr/blob/master/requirements.txt) file. This file provides a listing of the necessary packages used in this repository. 
+
+**Helpful commands**
+
+Execute the following commands in command prompt window
+
+- To see the list of installed python packages, `> pip list`
+- To see the list of outdated python packages: `> pip list --outdated`
+- To upgrade a particular python package: `> pip install [package] --upgrade`. Substitute the `[package]` with `package name`. 
+
 #### Contact
 If you'd like to contact me regarding bugs, questions, or general consulting, feel free to drop me a line at `ashishdutt@yahoo.com.my`
 
