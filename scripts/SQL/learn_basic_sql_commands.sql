@@ -106,3 +106,4 @@ SELECT
 1.0 * COUNT(CASE WHEN last_statement LIKE '%innocent%'
     THEN 1 ELSE NULL END) / COUNT(*)
 FROM deathrow; # 0.05
+
