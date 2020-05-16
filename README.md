@@ -25,7 +25,8 @@ Execute the following commands in command prompt window
 
 - To see the list of installed python packages, `> pip list`
 - To see the list of outdated python packages: `> pip list --outdated`
-- To upgrade a particular python package: `> pip install [package] --upgrade`. Substitute the `[package]` with `package name`. 
+- To upgrade a particular python package: `> pip install [package] --upgrade`. Substitute the `[package]` with `package name`.
+- To automatically generate the `requirements.txt` file, open a terminal window in the repository and type the command, `pip3 freeze > requirements.txt`. See this helpful [SO post](https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt) on the same. 
 
 #### Contact
 If you'd like to contact me regarding bugs, questions, or general consulting, feel free to drop me a line at `ashishdutt@yahoo.com.my`
