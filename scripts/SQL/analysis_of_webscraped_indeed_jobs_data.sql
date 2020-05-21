@@ -32,3 +32,6 @@ select * from jobs where AdvertPostDate like "%just%";
 select * from jobs where AdvertPostDate like "%1%";
 select * from jobs where AdvertPostDate like "%1%" and CompanyRating>=4;
 select * from jobs where CompanyName like "%Career%";
+select * from jobs where AdvertPostDate like "%1 day%" 
+and AdvertPostDate not like "%11 day%"
+and CompanyRating>=4;
