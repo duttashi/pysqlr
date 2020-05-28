@@ -268,3 +268,35 @@ where item_brand like 'frui%'  and item_desc like 'app%';
 select * from tbl_shop_grocery;
 
 # split the date into day,month, year format
+select year(shop_date) as shop_year from tbl_shop_grocery;
+
+### Work done on 28/May/2020
+use logbook;
+# disable the safe update option before making any changes to the table
+SET SQL_SAFE_UPDATES = 0;
+show columns from tbl_shop_grocery;
+select shop_date from tbl_shop_grocery;
+
+# change date datatype
+alter table tbl_shop_grocery modify shop_date date;
+# split shop_date into 3 separate columns
+update tbl_shop_grocery set shop_date = year('shop_year');
+# , shop_date = date_format(`shop_month`,'%m'), shop_date= date_format(`shop_day`,'%d');
+SELECT DATE_FORMAT(now(),'%Y %m %d');
+SHOW VARIABLES LIKE "%version%";
+show tables;
+# To split the date column into 3 separate columns.
+## First, add 3 separate columns to the table. Then update them with the existing date column
+# alter  table tbl_shop_grocery drop column shop_month;
+
+alter table tbl_shop_grocery add column shop_year int after shop_date;
+update tbl_shop_grocery set shop_year = year(shop_date);
+alter table tbl_shop_grocery add column shop_month int after shop_year;
+update tbl_shop_grocery set shop_month = month(shop_date);
+alter table tbl_shop_grocery add column shop_day int after shop_month;
+update tbl_shop_grocery set shop_day = month(shop_date);
+# show all columns in table
+show columns from tbl_shop_grocery;
+select * from tbl_shop_grocery;
+# Now drop the shop_date column
+alter  table tbl_shop_grocery drop column shop_date;
