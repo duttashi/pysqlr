@@ -275,7 +275,7 @@ use logbook;
 # disable the safe update option before making any changes to the table
 SET SQL_SAFE_UPDATES = 0;
 show columns from tbl_shop_grocery;
-select shop_date from tbl_shop_grocery;
+select * from tbl_shop_grocery;
 
 # change date datatype
 alter table tbl_shop_grocery modify shop_date date;
@@ -300,3 +300,57 @@ show columns from tbl_shop_grocery;
 select * from tbl_shop_grocery;
 # Now drop the shop_date column
 alter  table tbl_shop_grocery drop column shop_date;
+alter table tbl_shop_grocery add column `shop_id` int unsigned primary key auto_increment;
+# change column position
+alter table tbl_shop_grocery modify shop_id int after shop_year;
+alter table tbl_shop_grocery modify shop_year int after shop_id;
+alter table tbl_shop_grocery auto_increment=100;
+
+### Work done on 30/May/2020
+# Objective: To create separate tables from tbl_shop_grocery table
+use logbook;
+# show tables in database
+show tables;
+# disable the safe update option before making any changes to the table
+SET SQL_SAFE_UPDATES = 0;
+show columns from tbl_shop_grocery;
+# look at the table structure statement
+show create table tbl_shop_grocery;
+# create a new table from the existig table
+create table if not exists tbl_store_info (primary key(store_id)) 
+select shop_id as store_id, store_name, store_loc
+from tbl_shop_grocery;
+# show columns in new table
+show columns from tbl_store_info;
+
+# create a new table from the existig table
+create table if not exists tbl_product_info 
+select shop_id as prod_id, item_brand, item_desc, item_qty_weight, item_orig_cost as item_cost, item_promo
+from tbl_shop_grocery;
+# show columns in new table
+show columns from tbl_product_info;
+# drop table tbl_product_info;
+
+# create a new table from the existig table
+# drop table tbl_shopping_info;
+create table if not exists tbl_shopping_info  
+select shop_id, shop_year, shop_month, shop_day, item_cost_paid
+from tbl_shop_grocery;
+# show columns in new table
+show columns from tbl_shopping_info;
+# show all tables in database
+show tables;
+
+# Populate new tables from existing table `tbl_shop_grocery`
+# show columns for the existing table tbl_shop_grocery
+show columns from tbl_shop_grocery;
+insert into tbl_shopping_info
+select shop_id, shop_year, shop_month, shop_day, item_cost_paid
+from tbl_shop_grocery;
+# show table data 
+select * from tbl_shopping_info;
+# show column data types
+describe tbl_shopping_info;
+set sql_safe_updates=0; # this will disable the safe update option and will let you to create a column in an existing table
+# add a new column to shoppig info table
+alter table tbl_shopping_info add column shopping_date date;
