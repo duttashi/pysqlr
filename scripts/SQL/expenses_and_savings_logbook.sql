@@ -340,10 +340,13 @@ from tbl_shop_grocery;
 show columns from tbl_shopping_info;
 # show all tables in database
 show tables;
+# show column names in table
+show columns from tbl_product_info;
+show columns from tbl_shopping_info;
+show columns from tbl_store_info;
+show columns from tbl_shop_grocery;
 
 # Populate new tables from existing table `tbl_shop_grocery`
-# show columns for the existing table tbl_shop_grocery
-show columns from tbl_shop_grocery;
 insert into tbl_shopping_info
 select shop_id, shop_year, shop_month, shop_day, item_cost_paid
 from tbl_shop_grocery;
@@ -351,6 +354,32 @@ from tbl_shop_grocery;
 select * from tbl_shopping_info;
 # show column data types
 describe tbl_shopping_info;
-set sql_safe_updates=0; # this will disable the safe update option and will let you to create a column in an existing table
 # add a new column to shoppig info table
-alter table tbl_shopping_info add column shopping_date date;
+alter table tbl_shopping_info add column shopping_date date default null;
+
+# Q. join day, month, year columns into shopping_date column.
+# Ans. Create a separate column and populate it with NULL values
+# Then update the table by applying the str_to_date() and concat() with a where clause as shown below
+update tbl_shopping_info
+set shopping_date = str_to_date(concat(shop_year,'-',shop_month,'-',shop_day),'%Y-%m-%d')
+where shopping_date is null;
+
+# show table data 
+select * from tbl_shopping_info;
+# drop column
+alter table tbl_shopping_info drop column shop_idx;
+
+# remove duplicate rows
+-- create a new tmp_shopp_info table
+CREATE TABLE tmp_shop_info LIKE tbl_shopping_info;
+-- add a unique constraint
+ALTER TABLE tmp_shop_info ADD UNIQUE(shop_id);
+-- scan over the shopping_info table to insert entries
+INSERT IGNORE INTO tmp_shop_info SELECT * FROM tbl_shopping_info ORDER BY shop_id;
+select * from tmp_shop_info;
+-- rename tables
+RENAME TABLE tbl_shopping_info TO tbl_shopping_info_backup, tmp_shop_info TO tbl_shopping_info;
+-- drop the backup table
+drop table tbl_shopping_info_backup;
+select * from tbl_shopping_info;
+
