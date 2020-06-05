@@ -28,6 +28,14 @@ Execute the following commands in command prompt window
 - To upgrade a particular python package: `> pip install [package] --upgrade`. Substitute the `[package]` with `package name`.
 - To automatically generate the `requirements.txt` file, open a terminal window in the repository and type the command, `pip3 freeze > requirements.txt`. See this helpful [SO post](https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt) on the same. 
 
+### Script naming convention
+
+It's important to highlight the essence of script naming convention. The underlying hope is that several months from now, if I need any such recipe, I should be able to determine what the recipe does, by simply looking at its name.
+
+- If the task involves getting data out of mysql and passing it to python or r, then the script name will begin with `mysqlpy` or `mysqlr` followed by a string of self-explanatory words separated by underscores.
+- If the task involves using python or r to save data into mysql then the script name will begin with `pymysql` or `rmysql` followed by a string of self-explanatory words separated by underscores.
+
+
 #### Contact
 If you'd like to contact me regarding bugs, questions, or general consulting, feel free to drop me a line at `ashishdutt@yahoo.com.my`
 
