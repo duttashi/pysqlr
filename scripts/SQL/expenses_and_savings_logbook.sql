@@ -383,3 +383,23 @@ RENAME TABLE tbl_shopping_info TO tbl_shopping_info_backup, tmp_shop_info TO tbl
 drop table tbl_shopping_info_backup;
 select * from tbl_shopping_info;
 
+# Work done on June 6th 2020
+# Order by clause
+select * from tbl_shopping_info;
+select shop_year, item_cost_paid from tbl_shopping_info order by shop_month desc;
+
+# Rank clause
+select * from tbl_product_info;
+select item_brand, item_desc, item_cost,
+rank() over (order by item_cost) as prod_rank
+from tbl_product_info;
+
+# Partition clause
+select * from tbl_product_info;
+select item_brand, item_desc, item_cost,
+rank() over (partition by item_desc order by item_cost) as prod_rank
+from tbl_product_info;
+
+# view clause
+select * from tbl_product_info;
+select * from store_info;
