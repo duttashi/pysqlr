@@ -7,15 +7,31 @@
 
 # pysqlr
 
-This repository contains scripts for database interfacing. Primarily, the database will be `MySql 8.0.19` and the interfacing languages are `python 3.7` and `R 3.6.1`.
+This repository contains scripts for database interfacing. Primarily, the database will be SQL based `MySql 8.0.19` and NoSQL based `MongoDB`. The interfacing programming languages are `python 3.7` and `R 3.6.1`.
 
-### General information
+## General information
 
-#### Summary
+### Summary
 
 The world wide web is full of data that are of great interest to scientists and businesses alike. Firms, public institutions, and private users provide every imaginable type of information, and new channels of communication generate vast amounts of data on human behavior. But how to efficiently use the data present in either offline or online database's, is an interesting question. I will answer such questions by creating effective solutions in this repository.
 
-#### Result reproducibility
+### Project navigation structure
+
+The root folder contains three sub-folders, namely;
+
+- `dashboards` - anything related to PowerBI and MySQL/Python/R.
+- `db` - has notes, scripts on sql-based-database or nosql-based-database.
+- `db-interface` - has notes, scripts on python-mysql/r-mysql interface and quick recipes. 
+
+### Script naming convention
+
+It's important to highlight the essence of script naming convention. The underlying hope is that several months from now, if I need any such recipe, I should be able to determine what the recipe does, by simply looking at its name.
+
+- If the task involves getting data out of mysql and passing it to python or r, then the script name will begin with `mysqlpy` or `mysqlr` followed by a string of self-explanatory words separated by underscores.
+- If the task involves using python or r to save data into mysql then the script name will begin with `pymysql` or `rmysql` followed by a string of self-explanatory words separated by underscores.
+
+
+### Result reproducibility
 
 Please read the [requirements.txt](https://github.com/duttashi/pysqlr/blob/master/requirements.txt) file. This file provides a listing of the necessary packages used in this repository. 
 
@@ -28,18 +44,10 @@ Execute the following commands in command prompt window
 - To upgrade a particular python package: `> pip install [package] --upgrade`. Substitute the `[package]` with `package name`.
 - To automatically generate the `requirements.txt` file, open a terminal window in the repository and type the command, `pip3 freeze > requirements.txt`. See this helpful [SO post](https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt) on the same. 
 
-### Script naming convention
-
-It's important to highlight the essence of script naming convention. The underlying hope is that several months from now, if I need any such recipe, I should be able to determine what the recipe does, by simply looking at its name.
-
-- If the task involves getting data out of mysql and passing it to python or r, then the script name will begin with `mysqlpy` or `mysqlr` followed by a string of self-explanatory words separated by underscores.
-- If the task involves using python or r to save data into mysql then the script name will begin with `pymysql` or `rmysql` followed by a string of self-explanatory words separated by underscores.
-
-
-#### Contact
+### Contact
 If you'd like to contact me regarding bugs, questions, or general consulting, feel free to drop me a line at `ashishdutt@yahoo.com.my`
 
-#### Donate
+### Donate
 
 If this project help you reduce time to develop, you can give me a cup of coffee :)
 
