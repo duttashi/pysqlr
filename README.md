@@ -20,8 +20,28 @@ The world wide web is full of data that are of great interest to scientists and 
 The root folder contains three sub-folders, namely;
 
 - `dashboards` - anything related to PowerBI and MySQL/Python/R.
-- `db` - has notes, scripts on sql-based-database or nosql-based-database.
+- `db` - has notes, scripts on sql-based-database and nosql-based-database.The folder is further divided into 2 sub-folders namely,
+	- `db-sql`
+		- `db-mysql`
+			- `scripts`: database connection or data manipulation scripts.
+			- `notes`: notes on database connection or data manipulation
+			- `resources`: helpful resources
+		- `db-postgresql`
+			- `scripts`: database connection or data manipulation scripts.
+			- `notes`: notes on database connection or data manipulation
+			- `resources`: helpful resources
+	- `db-nosql`
+		- `db-mongodb`
+			- `scripts`: database connection or data manipulation scripts.
+			- `notes`: notes on database connection or data manipulation
+			- `resources`: helpful resources
 - `db-interface` - has notes, scripts on python-mysql/r-mysql interface and quick recipes. 
+	- `scripts_pymsql`: mysql database interfacing with python 3.x
+	- `scripts_rmysql`: mysql database interfacing with R 4.x.x
+	- `scripts_pypostgresql`: postgresql interfacing with python 3.x
+	- `scripts_rpostgresql`: postgresql interfacing with R 4.x.x
+	- `scripts_pymongodb`: mongodb interfacing with python 3.x
+	- `scripts_rmongodb`: mongodb interfacing with R 4.x.x
 
 ### Script naming convention
 
