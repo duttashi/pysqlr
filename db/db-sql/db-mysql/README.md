@@ -1,4 +1,7 @@
-This folder contains Postgre SQL scripts 
+This folder contains notes and scripts on MySQL database:
+
+
+
 
 
 *Copyright* 
