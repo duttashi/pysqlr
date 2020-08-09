@@ -1,3 +1,0 @@
-Mongodb atlas connection string
-
-mongodb+srv://dbUser:papa%23123@cluster0-s47sx.mongodb.net/test
