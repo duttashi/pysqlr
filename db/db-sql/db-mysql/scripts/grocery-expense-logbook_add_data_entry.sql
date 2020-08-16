@@ -1,5 +1,4 @@
 use logbook;
-drop table tbl_grocery;
 # create table
 create table tbl_grocery(
 shopid int not null auto_increment,
@@ -9,6 +8,7 @@ item_cost float default 0.0, item_weight float default 0.0,item_discount float d
 primary key(shopid));
 
 desc logbook.tbl_grocery;
+
 insert into tbl_grocery (shop_date, item_brand, item_desc,item_cost,item_weight)
 values ("2020-8-8","local vegetable","red onions",2,1),
 ("2020-8-8","local vegetable","tomato",3.43,1),
@@ -23,7 +23,7 @@ values ("2020-8-8","local vegetable","red onions",2,1),
 ("2020-8-8","local vegetable","garlic",0.67,0.4),
 ("2020-8-8","local toffee","sweets",2.99,0.3),
 ("2020-8-8","local toffee","sweets",3.99,0.4);
-select * from tbl_grocery;
+
 insert into tbl_grocery (shop_date, item_brand, item_desc,item_cost,item_weight)
 values ("2020-7-7","local vegetable","pak choy",3,1),
 ("2020-7-7","local vegetable","potato",6.53,1),
@@ -33,5 +33,4 @@ values ("2020-7-7","local vegetable","pak choy",3,1),
 ("2020-7-7","dairy produce","rasaku coconut milk",12.99,6),
 ("2020-7-7","laundry","Downy mystique softener",5.99,1),
 ("2020-7-7","local vegetable","japanese CF",2.50,0.3);
-select * from tbl_grocery;
 
