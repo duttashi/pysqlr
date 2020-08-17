@@ -1,4 +1,5 @@
 This folder contains notes and scripts on NoSQL (Not oly SQL) databases:
+Using MongoDB version 4.2.7
 
 - MongoDB
 
